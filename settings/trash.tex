@@ -1,0 +1,52 @@
+\ifthenelse{\equal{\whatPoem}{EaE}}{
+    \AddToHook{shipout/background}{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \ifnum\isPayant = 1
+                \fill[cyan!70!green, opacity=0.125] (current page.south west) rectangle (current page.north east);
+            \fi
+            \node[rotate=90,opacity=1] at ([xshift = 1cm] current page.east) {%
+                author: \textsf{Hash1}\\
+                production date: \textsf{Hash2}\\
+                title: \textsf{Hash3}};
+        \end{tikzpicture}%
+    }
+}{
+    \AddToHook{shipout/background}{%
+        \begin{tikzpicture}[remember picture,overlay]
+            \ifnum\isPayant = 1
+                \fill[gray!70!brown, opacity=0.125] (current page.south west) rectangle (current page.north east);
+            \fi
+            \node[rotate=90,opacity=1] at ([xshift = 1cm] current page.east) {%
+                author: \textsf{Hash1}\\
+                production date: \textsf{Hash2}\\
+                title: \textsf{Hash3}};
+        \end{tikzpicture}%
+    }
+}
+
+
+
+
+
+% Inclure les fichiers en fonction de l'index
+\ifcase\poemIndex
+    % Cas 0 : EaE
+    \ifnum\isPayant = 1
+        \input{Body/EaE/2015_EaE}
+        \input{Body/EaE/2019_EaE}
+        \input{Body/EaE/2021_EaE}
+    \fi
+    \input{Body/EaE/2022_EaE}
+    \input{Body/EaE/2023_EaE}
+    \input{Body/EaE/2024_EaE}
+\or
+    % Cas 1 : DHTH
+    \input{Body/DHTH/2023_DHTH}
+    \input{Body/DHTH/2024_DHTH}
+\or
+    % Cas 2 : VsB
+    \input{Body/VsB/2024_VsB}
+\else
+    % Cas par défaut (non défini)
+    \typeout{Erreur : Recueil non défini.}
+\fi

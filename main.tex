@@ -1,0 +1,54 @@
+% ====================================================================== %
+%   author  :   louis tomczyk
+%   date    :   2024.12.12
+%   version :   2.0.0
+% ====================================================================== %
+%   ChangeLog
+%   (1.0.0) - 2024.10.01    : création
+%   (2.0.0) - 2024.12.12    : more than 2 poem family management
+%   (2.1.0) - 2025.03.06    : customized dedication
+% ====================================================================== %
+
+
+\documentclass[a6paper,6pt]{book}
+
+% gestion des versions
+% isPayant = 1 === version payante avec commentaires
+%          = 0 === version gratuite sans commentaires
+\newcommand{\isPayant}{1}
+\newcommand{\poemIndex}{3} % 0 = EaE, 1 = DHTH, 2 = tmp
+\newcommand{\isCustom}{0}
+
+\ifnum \isPayant = 0
+	\renewcommand{\isCustom}{0}
+\fi
+
+\input{settings/packages}
+\input{settings/macros}
+\input{settings/subtitutions}
+\input{settings/hash}
+\input{settings/style}
+
+% latexmk -pdfxe -jobname="EaE_free" main.tex
+% latexmk -pdfxe -jobname="EaE_full" main.tex
+
+
+
+\begin{document}
+% ---------------------------------------------- %
+
+%\input{OutBody/0_cover}
+%\input{OutBody/1_versions}
+%\input{OutBody/2_intro}
+%\input{OutBody/3_explications}
+
+\input{./Body/1_body.tex}
+%\input{./Body/2_MalikaBerak.tex}
+\input{./Body/2_MalikaBerak_free.tex}
+\input{./Body/3_body_2.tex}
+
+\input{OutBody/notes}
+%\input{OutBody/glossaire}
+%\lastPage{\poemIndex}
+% ---------------------------------------------- %
+\end{document}

@@ -1,0 +1,29 @@
+% ====================================================================== %
+%   author  :   louis tomczyk
+%   date    :   2024.12.12
+%   version :   1.0.0
+% ====================================================================== %
+%   ChangeLog
+%   (1.0.0) - 2024.12-12    : création
+% ====================================================================== %
+
+\AddToHook{shipout/background}{%
+    \begin{tikzpicture}[remember picture, overlay]
+    \ifnum\isPayant = 1
+        \ifcase\poemIndex
+            \fill[fill = colourPoem, opacity=0.12525] 
+                (current page.south west) rectangle (current page.north east);
+        \or
+            \fill[fill = colourPoem, opacity=0.12525] 
+                (current page.south west) rectangle (current page.north east);
+        \or
+            \fill[fill = colourPoem, opacity=0.12525] 
+                (current page.south west) rectangle (current page.north east);
+        \else
+            \fill[red!50!gray, opacity=0.12525] 
+                (current page.south west) rectangle (current page.north east);
+        \fi
+    \fi
+    \node[rotate=90,opacity=0.25] at ([xshift=-0.75cm] current page.east) {\tiny{ID: \hash}};
+    \end{tikzpicture}%
+}

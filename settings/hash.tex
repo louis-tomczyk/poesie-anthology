@@ -1,0 +1,68 @@
+% ====================================================================== %
+%   author  :   louis tomczyk
+%   date    :   2025.03.10
+%   version :   1.1.0
+% ====================================================================== %
+%   ChangeLog
+%   (1.0.0) - 2024.12.12    : création
+%   (1.1.0) - 2025.03.10    : hash perso + remove VsB
+% ====================================================================== %
+
+\ifcase\poemIndex
+    \newcommand{\whatPoem}{EaE}
+    \newcommand{\hash}{c5a1dbacd06e766fa28cc08a0a08b25d33dcc2fb88a636aac8e3cebdf511d76b}
+    \newcommand{\poemTitle}{envolées à l'emportée}
+    \colorlet{colourPoem}{cyan!70!green}
+\or
+    \newcommand{\whatPoem}{DHTH}
+    \newcommand{\hash}{46bf201486ecf85dead0164237834c3fbbcf6f4b64e97106ec5fddc48537d337}
+    \newcommand{\poemTitle}{deuil de l'Homme, terre des hommes}
+    \colorlet{colourPoem}{gray!70!brown}
+\else
+    \newcommand{\whatPoem}{tmp}
+    \newcommand{\hash}{8b806f2e9f6aad9c4a4f8f110de77d035588e56a2308ad1870f7ce00c831129a}
+    \newcommand{\poemTitle}{taire les mèrs passagères}
+    \colorlet{colourPoem}{blue!30!purple}
+\fi
+
+\ifnum \isCustom = 1
+    \newcommand{\hashPerso}{66e208b0b9cf8b4bd6330b0728478ec41b7589a03a439e442017e75d648f57b2}
+\fi
+
+% louis@luyi:~$ echo -n "2025-04-01 23, louis tomczyk, envolees-a-l-emportee" | sha256sum
+% 7881f8505e13b5c6244ff269179fed38c74a5165b0b027d41aa705f6edf7d966
+
+% louis@luyi:~$ echo -n "2025-04-01 23, louis tomczyk, deuil-de-l-Homme-terre-des-hommes" | sha256sum
+% 46bf201486ecf85dead0164237834c3fbbcf6f4b64e97106ec5fddc48537d337
+
+% louis@luyi:~$ echo -n "2025-04-18 21, louis tomczyk, taire-les-mers-passageres" | sha256sum
+% 8b806f2e9f6aad9c4a4f8f110de77d035588e56a2308ad1870f7ce00c831129a
+
+\ifnum \isCustom = 1
+\hypersetup{
+    pdftitle    = {\poemTitle},
+    pdfauthor   = {\hash{}},
+    pdfkeywords = {\hashPerso{}},
+    pdfsubject  = {Recueil de poèmes},
+    pdfproducer = {LaTeX},
+    pdfcreator  = {XeLaTeX},
+    pdflang     = {fr}
+}
+\else
+\hypersetup{
+    pdftitle    = {\poemTitle},
+    pdfauthor   = {\hash{}},
+    pdfkeywords = {\hash{}},
+    pdfsubject  = {Recueil de poèmes},
+    pdfproducer = {LaTeX},
+    pdfcreator  = {XeLaTeX},
+    pdflang     = {fr}
+}
+\fi
+
+
+
+% léonard
+% echo -n "2025-05-04 10, louis tomczyk, envolees-a-l-emportee, Léonard Sentchev-1996-08-27" | sha256sum
+% 66e208b0b9cf8b4bd6330b0728478ec41b7589a03a439e442017e75d648f57b2  -
+

@@ -1,0 +1,55 @@
+% ====================================================================== %
+%   author  :   louis tomczyk
+%   date    :   2025.04.12
+%   version :   2.1.2
+% ====================================================================== %
+%   ChangeLog
+%   (1.0.0) - 2024.10.01    : création
+%   (2.0.0) - 2024.12.12    : more than 2 poem family management
+%	(2.1.0) - 2025.03.16 	: 3rd poem tmp
+%	(2.1.1) - 2025.04.04 	: 3rd poem tmp working in free mode
+%	(2.1.2) - 2025.04.12 	: color tmp title
+% ====================================================================== %
+
+
+
+\begin{titlepage}
+    \ifnum\isPayant = 1
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[opacity=1, inner sep=0pt] at (current page.center) 
+                {\includegraphics[width=\paperwidth, height=\paperheight]
+                {./Figures/EaE/abysses.jpg}};
+        \end{tikzpicture}
+    \else
+    	.
+    \fi
+    \centering
+    	\\
+        \vspace*{\fill}
+            {\Huge anthologie de poésie \\ d'une vie en sursis} \\
+            \vspace{1cm}
+            {\Large divers}
+        \vspace*{\fill}
+\end{titlepage}
+
+
+
+% ==================================================================== % 
+% ==================================================================== % 
+% ==================================================================== % 
+% ==================================================================== % 
+% ==================================================================== % 
+\myPageBreak
+\ifnum \isCustom = 1
+\input{./OutBody/4_dedicace.tex}
+\fi
+
+
+\vspace*{\fill}
+\tabto{3.25cm} anthologie de poésie\\
+\tabto{3.27cm} d'une vie en sursis	
+\vspace*{\fill}
+\pagestyle{fancy}
+\fancyhf{}
+
+

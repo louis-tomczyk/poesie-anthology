@@ -1,0 +1,50 @@
+% ====================================================================== %
+%   author  :   louis tomczyk
+%   date    :   2024.12.12
+%   version :   2.0.0
+% ====================================================================== %
+%   ChangeLog
+%   (1.0.0) - 2024.10.01    : création
+%   (2.0.0) - 2024.12.12    : more than 2 poem family management
+% ====================================================================== %
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{wallpaper}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tabto}
+\usepackage[top=0.5cm,bottom=1.5cm,left=0.5cm,right=0.5cm]{geometry} % A6
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{xifthen}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{bm}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\usepackage{amssymb}
+
+\ifnum\isPayant = 1
+	\setmainfont{CMU Bright}[
+	    UprightFont    = *-Roman,      % cmunbmr.ttf
+	    ItalicFont     = *-Oblique,    % cmunbmo.ttf
+	    BoldFont       = *-Bold,       % cmunbbx.ttf
+	    BoldItalicFont = *-BoldOblique % (s’il existe : cmunbxo.ttf) 
+	]
+\fi
+
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+\setotherlanguages{russian, chinese}
+\newfontfamily\chinesefont{Noto Sans CJK SC}
+
+\newcommand{\OG}[1]{\og{}#1\fg{}}
